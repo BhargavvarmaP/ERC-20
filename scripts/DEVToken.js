@@ -1,6 +1,6 @@
 const {ethers} = require("hardhat");
 
-async function deploy() {
+async function main() {
 
     const DEVToken = await ethers.getContractFactory("DEVToken");
     const DEVtoken = await DEVToken.deploy();
@@ -10,7 +10,7 @@ async function deploy() {
 
 }
 
-deploy().catch((error) => {
+main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
   });
